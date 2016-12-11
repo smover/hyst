@@ -71,6 +71,10 @@ public abstract class Expression
 	@Override
 	public String toString()
 	{
+	  if (null == expressionPrinter) {
+	    throw new RuntimeException("expressionPrinter not initialized " +
+	        "in the expression.");
+	  }
 		return expressionPrinter.print(this);
 	}
 
